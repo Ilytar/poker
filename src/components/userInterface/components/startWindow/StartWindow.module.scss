@@ -1,0 +1,32 @@
+.startWindow {
+    height: 100%;
+    position: relative;
+}
+
+.backgroundImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.contentWrapper {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttonStartGameWrapper {
+    position: absolute;
+    left: 46%;
+    bottom: 20%;
+    z-index: 2;
+    transform: scale(0.75);
+}

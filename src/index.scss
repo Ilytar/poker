@@ -1,0 +1,30 @@
+@import url(./reset.scss);
+
+// переменные
+:root {
+    --color_primary: rgb(255, 255, 255);
+    --color_accent: orange;
+    --text-padding: 40px;
+}
+
+#root {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+// обновляем стиль курсора для заблокированной кнопки (иначе будет pointer)
+html,
+button:disabled {
+    cursor: url("../public/img/cursor/Cursor_default.png"), auto;
+}
+
+button:not([disabled]) {
+    cursor: url("../public/img/cursor/Cursor_hover.png"), auto;
+}
+
+body {
+    font-size: 24px;
+    font-family: "EB Garamond", "Times New Roman", Times, serif;
+    color: var(--color_primary);
+}

@@ -1,0 +1,176 @@
+$transition: cubic-bezier(0.5, 0, 0.5, 1);
+$slideTimeAnimation: 1.5s;
+$opacityTransition: opacity $slideTimeAnimation ease-out;
+$transformTransition: transform $slideTimeAnimation $transition;
+$imageAnimation: 2s ease-in-out infinite;
+
+.carouselItem {
+    width: 300px;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0.45;
+    transform: scale(0.75);
+    transition: $opacityTransition, $transformTransition;
+    position: relative;
+
+    &_active {
+        opacity: 1;
+        transform: scale(1);
+
+        & .contentWrapper {
+            transform: translateX(-50%);
+        }
+
+        & .rightSection {
+            opacity: 1;
+        }
+
+        & .background {
+            opacity: 1;
+            width: 204%;
+        }
+
+        & .title {
+            left: 0;
+            opacity: 1;
+        }
+
+        .imageLeft .image {
+            animation: k-left-image $imageAnimation;
+            animation-direction: alternate;
+        }
+
+        .imageRight .image {
+            animation: k-right-image $imageAnimation;
+            animation-direction: alternate;
+        }
+
+        .buttonWrapper {
+            opacity: 1;
+        }
+    }
+}
+
+.image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.contentWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: $opacityTransition, $transformTransition;
+}
+
+.imageWrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.imageLeft,
+.imageRight {
+    position: absolute;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+    perspective: 150px;
+    transform-style: preserve-3d;
+}
+
+.title {
+    position: relative;
+    left: 50%;
+    opacity: 0;
+    font-size: 32px;
+    text-align: center;
+    transition: $opacityTransition, left 1.5s $transition;
+    text-shadow: rgb(20, 87, 6) 0 0 12px;
+    z-index: 1;
+}
+
+.imageLeft {
+    perspective-origin: left center;
+    // добавляем 0.5% чтобы избавиться от полосы посередине картинки
+    clip-path: polygon(0 0, 50.5% 0, 50.5% 100%, 0 100%);
+}
+.imageRight {
+    perspective-origin: right center;
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+.rightSection {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    transform: translateX(100%);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: $opacityTransition;
+}
+
+.background {
+    height: 106%;
+    width: 304%;
+    position: absolute;
+    z-index: -1;
+    transform: translateY(-3%);
+    border-radius: 20px;
+    background: linear-gradient(
+        to left,
+
+        rgb(0, 0, 0) 50%,
+        rgba(0, 0, 0, 0.486) 70%,
+        #00000000 100%
+    );
+    opacity: 0;
+    transition: $opacityTransition, width 1.5s ease-in-out;
+}
+
+.descriptionWrapper {
+    transition: $opacityTransition;
+    border-radius: 20px;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.buttonWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+}
+
+.buttonWrapper img {
+    height: 100px;
+}
+
+@keyframes k-left-image {
+    0% {
+        transform: rotateY(-2deg) scaleX(0.92);
+    }
+    100% {
+        transform: rotateY(0deg) scaleX(1);
+    }
+}
+
+@keyframes k-right-image {
+    0% {
+        transform: rotateY(0deg) scaleX(1);
+    }
+    100% {
+        transform: rotateY(2deg) scaleX(0.92);
+    }
+}

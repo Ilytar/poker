@@ -1,0 +1,13 @@
+// обёртка слайда, куда помещается carouselItem
+.slide-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper {
+    height: 100vh;
+}
+.swiper-wrapper {
+    transition: cubic-bezier(0.5, 0, 0.5, 1);
+}

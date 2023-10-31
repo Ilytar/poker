@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-right: 20px;
+}
+.title {
+    font-size: 32px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    text-align: justify;
+
+    p {
+        text-indent: var(--text-padding);
+    }
+}

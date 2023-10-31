@@ -1,0 +1,40 @@
+.navButton {
+    width: 33%;
+    height: 90%;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    transition: opacity 1s ease-out;
+    cursor: url("../../../../../../../../public/img/cursor/Cursor_hover.png"),
+        auto;
+    opacity: 0.3;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &_left {
+        justify-content: flex-start;
+        padding-left: 60px;
+    }
+    &_right {
+        justify-content: flex-end;
+        padding-right: 60px;
+    }
+}
+
+.image {
+    width: 80px;
+    height: 80px;
+    background-size: auto;
+    background-position: top;
+    background-repeat: no-repeat;
+
+    &_left {
+        transform: rotate(90deg);
+    }
+
+    &_right {
+        transform: rotate(-90deg);
+    }
+}

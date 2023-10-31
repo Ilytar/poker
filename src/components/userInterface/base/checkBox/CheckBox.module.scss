@@ -1,0 +1,25 @@
+$imgSize: 32px;
+
+.container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.imgContainer {
+    position: relative;
+
+    height: $imgSize;
+}
+
+.check {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+
+    img {
+        height: $imgSize/1.5;
+    }
+}

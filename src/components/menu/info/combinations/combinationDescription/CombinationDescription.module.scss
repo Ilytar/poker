@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 20px;
+}
+.imgContainer {
+    height: 60px;
+    width: 60px;
+
+    img {
+        height: 100%;
+    }
+}
+
+.textContainer {
+    display: flex;
+    gap: 5px;
+}
+
+.combinationName {
+    font-weight: bold;
+    color: var(--color_accent);
+}

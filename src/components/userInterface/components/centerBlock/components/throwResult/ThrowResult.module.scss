@@ -1,0 +1,21 @@
+.throwResultCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text {
+    font-size: 20px;
+    color: rgb(205, 216, 195);
+}
+
+.playerName {
+    font-size: 24px;
+    color: white;
+}
+
+.image {
+    width: 128px;
+    height: 128px;
+}

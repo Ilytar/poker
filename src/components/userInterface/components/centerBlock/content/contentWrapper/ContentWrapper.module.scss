@@ -1,0 +1,13 @@
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+// используется когда внутри центрального блока только кнопки для повышения ставки
+.row {
+    flex-direction: row;
+    flex-grow: 0;
+}

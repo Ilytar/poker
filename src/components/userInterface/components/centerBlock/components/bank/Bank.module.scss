@@ -1,0 +1,18 @@
+.block {
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.text {
+    font-size: 20px;
+    color: var(--color_primary);
+}
+.bankValue {
+    padding-bottom: 15px;
+    font-size: 36px;
+    color: var(--color_primary);
+    font-weight: 1800;
+    -webkit-text-stroke: 1px black;
+}

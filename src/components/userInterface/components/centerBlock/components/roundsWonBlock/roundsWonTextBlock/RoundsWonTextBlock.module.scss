@@ -1,0 +1,13 @@
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    // большой z чтобы надпись была над иконками
+    position: absolute;
+    z-index: 100;
+}
+
+.text {
+    color: var(--color_primary);
+}
